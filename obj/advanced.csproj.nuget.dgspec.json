@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\advanced.csproj": {}
+    "d:\\c#\\advanced\\advanced.csproj": {}
   },
   "projects": {
-    "D:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\advanced.csproj": {
+    "d:\\c#\\advanced\\advanced.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\advanced.csproj",
+        "projectUniqueName": "d:\\c#\\advanced\\advanced.csproj",
         "projectName": "advanced",
-        "projectPath": "D:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\advanced.csproj",
-        "packagesPath": "C:\\Users\\marcuscastilho\\.nuget\\packages\\",
-        "outputPath": "D:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\obj\\",
+        "projectPath": "d:\\c#\\advanced\\advanced.csproj",
+        "packagesPath": "C:\\Users\\Paulo Victor\\.nuget\\packages\\",
+        "outputPath": "d:\\c#\\advanced\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\marcuscastilho\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Paulo Victor\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -35,6 +35,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.113.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -50,7 +56,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
