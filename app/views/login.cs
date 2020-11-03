@@ -1,7 +1,8 @@
 namespace advanced
 {
-    // Interface usuário, login
-    public static class Login {
-        
-    }
+  // Interface usuário, login
+  public static class Login
+  {
+
+  }
 }

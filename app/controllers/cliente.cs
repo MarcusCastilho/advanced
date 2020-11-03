@@ -1,6 +1,7 @@
 namespace advanced
 {
-    class Cliente {
-        
-    }
+  class Cliente : Pessoa
+  {
+
+  }
 }

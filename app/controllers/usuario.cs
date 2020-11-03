@@ -1,6 +1,7 @@
 namespace advanced
 {
-    class Usuario {
-        
-    }
+  class Usuario : Pessoa
+  {
+
+  }
 }

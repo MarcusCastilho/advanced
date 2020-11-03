@@ -1,0 +1,13 @@
+D:\Cursos\UCL\periodo_4\PROGRAMACAO_AVANCADA\advanced\obj\Debug\netcoreapp3.1\advanced.csprojAssemblyReference.cache
+D:\Cursos\UCL\periodo_4\PROGRAMACAO_AVANCADA\advanced\obj\Debug\netcoreapp3.1\advanced.AssemblyInfoInputs.cache
+D:\Cursos\UCL\periodo_4\PROGRAMACAO_AVANCADA\advanced\obj\Debug\netcoreapp3.1\advanced.AssemblyInfo.cs
+D:\Cursos\UCL\periodo_4\PROGRAMACAO_AVANCADA\advanced\obj\Debug\netcoreapp3.1\advanced.csproj.CoreCompileInputs.cache
+D:\Cursos\UCL\periodo_4\PROGRAMACAO_AVANCADA\advanced\bin\Debug\netcoreapp3.1\advanced.exe
+D:\Cursos\UCL\periodo_4\PROGRAMACAO_AVANCADA\advanced\bin\Debug\netcoreapp3.1\advanced.deps.json
+D:\Cursos\UCL\periodo_4\PROGRAMACAO_AVANCADA\advanced\bin\Debug\netcoreapp3.1\advanced.runtimeconfig.json
+D:\Cursos\UCL\periodo_4\PROGRAMACAO_AVANCADA\advanced\bin\Debug\netcoreapp3.1\advanced.runtimeconfig.dev.json
+D:\Cursos\UCL\periodo_4\PROGRAMACAO_AVANCADA\advanced\bin\Debug\netcoreapp3.1\advanced.dll
+D:\Cursos\UCL\periodo_4\PROGRAMACAO_AVANCADA\advanced\bin\Debug\netcoreapp3.1\advanced.pdb
+D:\Cursos\UCL\periodo_4\PROGRAMACAO_AVANCADA\advanced\obj\Debug\netcoreapp3.1\advanced.dll
+D:\Cursos\UCL\periodo_4\PROGRAMACAO_AVANCADA\advanced\obj\Debug\netcoreapp3.1\advanced.pdb
+D:\Cursos\UCL\periodo_4\PROGRAMACAO_AVANCADA\advanced\obj\Debug\netcoreapp3.1\advanced.genruntimeconfig.cache

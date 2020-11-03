@@ -1,7 +1,8 @@
 namespace advanced
 {
-    // Interface usuário, menu principal
-    public static class Home {
-        
-    }
+  // Interface usuário, menu principal
+  public static class Home
+  {
+
+  }
 }
