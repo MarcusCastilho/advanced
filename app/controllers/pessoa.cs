@@ -1,0 +1,6 @@
+namespace advanced
+{
+    interface Pessoa {
+        
+    }
+}

@@ -1,0 +1,6 @@
+namespace advanced
+{
+    class Usuario {
+        
+    }
+}
