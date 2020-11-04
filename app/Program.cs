@@ -38,7 +38,7 @@ namespace advanced
       }
       else
       {
-        //   buscar no banco os dados do usuário
+        //   buscar no banco os dados do cliente
 
         Cliente cliente = new Cliente(10, "vazio", "Luiza Angelo", "2799817010", cpf, "luizatamires@gmail.com");
         Console.WriteLine(cliente.Imprimir());
