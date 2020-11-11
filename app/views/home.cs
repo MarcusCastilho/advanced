@@ -4,5 +4,12 @@ namespace advanced
   public static class Home
   {
 
+
+    public static void StartHome()
+    {
+
+    }
+
+
   }
 }

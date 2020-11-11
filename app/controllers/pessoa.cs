@@ -1,12 +1,12 @@
 namespace advanced
 {
 
-  abstract class Pessoa
+  public abstract class Pessoa
   {
-    string nome;
-    string telefone;
-    string documento;
-    string email;
+    public string nome;
+    public string telefone;
+    public string documento;
+    public string email;
     string dados;
 
     public Pessoa(string nome, string telefone, string documento, string email)
