@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 namespace advanced
 {
 
@@ -23,5 +24,16 @@ namespace advanced
       return dados;
     }
 
+=======
+namespace advanced {
+  interface Pessoa {
+    int id { get; }
+    string nome { get; }
+    string telefone { get; }
+    string documento { get; }
+    string email { get; }
+
+    bool Cadastro();
+>>>>>>> 1c788c83b3ccccbf45f78c1b55818a1986e45eda
   }
 }
