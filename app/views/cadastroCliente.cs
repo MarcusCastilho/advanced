@@ -3,7 +3,7 @@ using System;
 namespace advanced
 {
   // Interface usuário, cadastro
-  public static class Cadastro
+  public static class CadastroCliente
   {
 
     private static string identificador = "";
