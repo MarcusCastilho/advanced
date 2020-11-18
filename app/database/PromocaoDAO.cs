@@ -43,8 +43,8 @@ namespace advanced
             }
         }
 
-        public static bool ResgatarToken(string token) {
+        // public static bool ResgatarToken(string token) {
 
-        }
+        // }
     }
 }

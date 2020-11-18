@@ -34,7 +34,7 @@ namespace advanced
 
       if (opcao == 1)
       {
-        Cadastro.Menu();
+        CadastroCliente.Menu();
       }
       else if (opcao == 2)
       {

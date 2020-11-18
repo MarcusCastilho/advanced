@@ -1,11 +1,16 @@
+using System;
 using System.Data;
 using System.Data.SQLite;
 
-namespace advanced {
-  public static class UsuarioDAO {
+namespace advanced
+{
+  public static class UsuarioDAO
+  {
 
-    public static bool Cadastrar(string nome, string telefone,  string documento, string email, string senha) {
-      try {
+    public static bool Cadastrar(string nome, string telefone, string documento, string email, string senha)
+    {
+      try
+      {
 
         SQLiteConnection conn = new SQLiteConnection("Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb");
         conn.Open();
@@ -27,5 +32,34 @@ namespace advanced {
 
     }
 
+    private static SQLiteConnection sqliteConnection;
+
+    private static SQLiteConnection DbConnection()
+    {
+      sqliteConnection = new SQLiteConnection("Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;");
+      sqliteConnection.Open();
+      return sqliteConnection;
+    }
+
+    public static DataTable BuscarCliente(string documento, string senha)
+    {
+      SQLiteDataAdapter da = null;
+      DataTable dt = new DataTable();
+
+      try
+      {
+        using (var cmd = DbConnection().CreateCommand())
+        {
+          cmd.CommandText = "SELECT * FROM cliente Where cpf=" + documento + "senha=" + senha;
+          da = new SQLiteDataAdapter(cmd.CommandText, DbConnection());
+          da.Fill(dt);
+          return dt;
+        }
+      }
+      catch (Exception ex)
+      {
+        throw ex;
+      }
+    }
   }
 }

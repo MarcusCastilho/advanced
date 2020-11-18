@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace advanced {
-  class Usuario : Pessoa {
+namespace advanced
+{
+  class Usuario : Pessoa
+  {
 
     public int id { get; }
     public string nome { get; }
@@ -14,7 +16,8 @@ namespace advanced {
     private List<Premio> premios;
     private List<Promocao> promocoes;
 
-    public Usuario (int id, string nome, string telefone, string documento, string email) {
+    public Usuario(int id, string nome, string telefone, string documento, string email)
+    {
       this.id = id;
       this.nome = nome;
       this.telefone = telefone;
@@ -28,6 +31,7 @@ namespace advanced {
 
 
     // MÉTODOS DE CLASSE
+
     public static bool CadastrarUsuario(string nome, string telefone, string documento, string email, string senha) {
       var res = UsuarioDAO.Cadastrar(nome, telefone, documento, email, senha);
 

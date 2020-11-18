@@ -1,5 +1,7 @@
-namespace advanced {
-  interface Pessoa {
+namespace advanced
+{
+  interface Pessoa
+  {
     int id { get; }
     string nome { get; }
     string telefone { get; }
