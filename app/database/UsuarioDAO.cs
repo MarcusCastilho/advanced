@@ -19,8 +19,10 @@ namespace advanced {
         cmd.Parameters.AddWithValue("@senha", senha);
         cmd.ExecuteNonQuery();
 
-      } catch(Exception ex) {
-        throw ex;
+        return true;
+
+      } catch(DataException err) {
+        return false;
       }
 
     }

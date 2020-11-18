@@ -6,6 +6,5 @@ namespace advanced {
     string documento { get; }
     string email { get; }
 
-    bool Cadastro();
   }
 }
