@@ -18,11 +18,11 @@ namespace advanced
 
     public Usuario(int id, string nome, string telefone, string documento, string email)
     {
-      this._id = id;
-      this._nome = nome;
-      this._telefone = telefone;
-      this._documento = documento;
-      this._email = email;
+      this.id = id;
+      this.nome = nome;
+      this.telefone = telefone;
+      this.documento = documento;
+      this.email = email;
 
       this._clientes = new List<Cliente>();
       this._premios = new List<Premio>();
@@ -31,16 +31,16 @@ namespace advanced
 
 
     // MÉTODOS DE CLASSE
-    public static bool Cadastro(string nome, string telefone, string documento, string email, string senha)
+    public static void Cadastro(string nome, string telefone, string documento, string email, string senha)
     {
       UsuarioDAO.Cadastrar(nome, telefone, documento, email, senha);
     }
 
     // MÉTODOS DE INSTÂNCIA
-    public bool CadastrarCliente(string nome, string telefone, string documento, string email)
-    {
-      var resp = Cliente.Cadastro(this.id, nome, telefone, documento, email);
-    }
+    // public bool CadastrarCliente(string nome, string telefone, string documento, string email)
+    // {
+    //   var resp = Cliente.Cadastro(this.id, nome, telefone, documento, email);
+    // }
 
   }
 }

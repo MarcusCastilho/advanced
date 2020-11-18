@@ -23,7 +23,7 @@ namespace advanced
       Console.WriteLine("Digite sua senha:");
       senha = Console.ReadLine();
 
-      UsuarioDAO.BuscarCliente(documento);
+      UsuarioDAO.BuscarCliente(documento, senha);
 
     }
   }

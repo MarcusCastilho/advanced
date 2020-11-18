@@ -7,7 +7,7 @@ namespace advanced
   public static class UsuarioDAO
   {
 
-    public static bool Cadastrar(string nome, string telefone, string documento, string email, string senha)
+    public static void Cadastrar(string nome, string telefone, string documento, string email, string senha)
     {
       try
       {
@@ -41,7 +41,7 @@ namespace advanced
       return sqliteConnection;
     }
 
-    public static DataTable BuscarCliente(string documento)
+    public static DataTable BuscarCliente(string documento, string senha)
     {
       SQLiteDataAdapter da = null;
       DataTable dt = new DataTable();
@@ -50,7 +50,7 @@ namespace advanced
       {
         using (var cmd = DbConnection().CreateCommand())
         {
-          cmd.CommandText = "SELECT * FROM cliente Where cpf=" + documento;
+          cmd.CommandText = "SELECT * FROM cliente Where cpf=" + documento + "senha=" + senha;
           da = new SQLiteDataAdapter(cmd.CommandText, DbConnection());
           da.Fill(dt);
           return dt;
