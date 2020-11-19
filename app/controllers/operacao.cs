@@ -1,6 +1,13 @@
+using System;
+
 namespace advanced
 {
-    abstract class Operacao {
-        
-    }
+  public abstract class Operacao {
+    // ATRIBUTOS
+    protected int id;
+    protected DateTime DataOperacao;
+    
+    // MÉTODOS 
+    public abstract Operacao RegistrarOperacao();
+  }
 }

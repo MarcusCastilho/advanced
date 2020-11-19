@@ -3,13 +3,14 @@ using System.Collections.Generic;
 
 namespace advanced
 {
-    abstract class Promocao {
-        protected int id;
-        protected DateTime validade;
-        protected List<string> tokens;
+  public abstract class Promocao {
+    // ATRIBUTOS
+    protected int id;
+    protected DateTime validade;
+    protected List<string> tokens;
 
-        public abstract bool Registrar();
-
-        public abstract bool Resgatar();
-    }
+    // MÉTODOS
+    public abstract Promocao Registrar();
+    public abstract Promocao Resgatar();
+  }
 }

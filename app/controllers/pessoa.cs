@@ -1,6 +1,6 @@
 namespace advanced
 {
-  interface Pessoa
+  public interface Pessoa
   {
     int id { get; }
     string nome { get; }

@@ -36,5 +36,25 @@ namespace advanced
         throw ex;
       }
     }
+
+    public static bool AtualizarPontucao(int cliente_id, int pontuacao)
+    {
+      try
+      {
+        using (var cmd = DbConnection().CreateCommand())
+        {
+          cmd.CommandText = "update cliente set pontuacao = @pontuacao where cliente_id = @cliente_id";
+          cmd.Parameters.AddWithValue("@cliente_id", cliente_id);
+          cmd.Parameters.AddWithValue("@pontuacao", pontuacao);
+          cmd.ExecuteNonQuery();
+        }
+        return true;
+      }
+      catch (Exception ex)
+      {
+        return false;
+      }
+    }
+
   }
 }
