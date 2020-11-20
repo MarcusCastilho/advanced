@@ -3,14 +3,31 @@ using System.Collections.Generic;
 
 namespace advanced
 {
-  public abstract class Promocao {
+  public class Promocao {
     // ATRIBUTOS
-    protected int id;
-    protected DateTime validade;
-    protected List<string> tokens;
+    private int id;
+    private DateTime validade;
+    private List<string> tokens;
+    private float desconto;
+
+    // CONSTRUTORES
+    public Promocao() {}
+    public Promocao (int id, DateTime validade, List<string> tokens, float desconto) {
+      this.id = id;
+      this.validade = validade;
+      this.tokens = tokens;
+      this.desconto = desconto;
+    }
 
     // MÉTODOS
-    public abstract Promocao Registrar();
-    public abstract Promocao Resgatar();
+    public Promocao Registrar(int usuario_id, DateTime validade, float desconto) {
+      var resp = PromocaoDAO.RegistrarPromocao(usuario_id, validade, desconto);
+
+      return resp;
+    }
+    public Promocao Resgatar() {
+
+    }
+
   }
 }

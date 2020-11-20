@@ -5,15 +5,18 @@ namespace advanced
     private float valor { get; set; }
 
     // CONSTRUTORES
-    public Venda() {}
-    public Venda(float valor) {
+    public Venda(int id, DateTime DataOperacao, float valor) : base(id, DataOperacao) {
+      this.id = id;
+      this.DataOperacao = DataOperacao;
       this.valor = valor;
     }
 
     // MÉTODOS
-    public override Operacao RegistrarOperacao()
+    public override Operacao RegistrarOperacao(int cliente_id)
     {
-      return new Venda();
+      var resp = OperacaoDAO.InserirVenda(cliente_id, this.valor);
+
+      return resp;
     }
 
   }

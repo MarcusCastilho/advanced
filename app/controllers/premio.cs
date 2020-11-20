@@ -19,10 +19,11 @@ namespace advanced
     }
 
     // MÉTODOS
-    public static Premio CadastrarPremio(int identificador, string nome, int pontuacao, string descricao)
+    public static bool CadastrarPremio(int usuario_id, string nome, int pontuacao, string descricao)
     {
-      // Database.InserirPremio(identificador, nome, pontuacao, descricao);
-      return new Premio();
+      var resp = PremioDAO.InserirPremio(usuario_id, nome, pontuacao, descricao);
+
+      return resp;
     }
 
   }

@@ -37,34 +37,40 @@ namespace advanced
 
     public bool Comprar(float valor) {
       var op = new Venda(valor);
-      var resp = op.RegistrarOperacao(); // Vai inserir operação no banco
+      var resp = op.RegistrarOperacao(this.id); // Vai inserir operação no banco
 
-      this.historico.Add(op); // Adicionar operação no histórico
-      this.pontuacao += (int)valor; // Adicionando valor da compra na pontuação 
-      this.AtualizarPontuacao();
+      if(resp) {
+        this.historico.Add(op); // Adicionar operação no histórico
+        this.pontuacao += (int)valor; // Adicionando valor da compra na pontuação 
+        this.AtualizarPontuacao();
 
-      return true;
+        return true;
+      } else {
+        return false;
+      }
+
     }
 
-    public Operacao Resgatar(Premio premio) {
+    public bool Resgatar(Premio premio) {
       var op = new Resgate(premio);
-      var resp = op.RegistrarOperacao();
+      var resp = op.RegistrarOperacao(this.id); // Vai inserir operação no banco
 
-      this.historico.Add(op);
+      if(resp) {
+        this.historico.Add(op); // Adicionar operação no histórico
+        this.pontuacao -= (int)premio.pontuacao;
+        this.AtualizarPontuacao();
 
-      return new Resgate();
+        return true;
+      } else {
+        return false;
+      }
     }
 
     // MÉTODOS PRIVADOS
     private bool AtualizarPontuacao() {
       var resp = ClienteDAO.AtualizarPontucao(this.id, this.pontuacao);
 
-      if (resp) {
-        return true;
-      } else {
-        return false;
-      } 
-
+      return resp;
     }
 
   }

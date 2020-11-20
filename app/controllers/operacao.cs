@@ -8,6 +8,7 @@ namespace advanced
     protected DateTime DataOperacao;
     
     // MÉTODOS 
-    public abstract Operacao RegistrarOperacao();
+    public abstract Operacao RegistrarOperacao(int cliente_id);
+    
   }
 }
