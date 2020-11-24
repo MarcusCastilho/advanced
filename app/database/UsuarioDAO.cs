@@ -7,12 +7,14 @@ namespace advanced
   public static class UsuarioDAO
   {
 
-    public static void Cadastrar(string nome, string telefone, string documento, string email, string senha)
+    public static bool Cadastrar(string nome, string telefone, string documento, string email, string senha)
     {
       try
       {
+        // string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
+        string DB_STRING = "Data Source=D:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
 
-        SQLiteConnection conn = new SQLiteConnection("Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb");
+        SQLiteConnection conn = new SQLiteConnection(DB_STRING);
         conn.Open();
 
         var cmd = conn.CreateCommand();
@@ -24,10 +26,12 @@ namespace advanced
         cmd.Parameters.AddWithValue("@senha", senha);
         cmd.ExecuteNonQuery();
 
+        return true;
+
       }
-      catch (Exception ex)
+      catch (DataException err)
       {
-        throw ex;
+        return false;
       }
 
     }
@@ -36,12 +40,15 @@ namespace advanced
 
     private static SQLiteConnection DbConnection()
     {
-      sqliteConnection = new SQLiteConnection("Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;");
+      // string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
+      string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
+
+      sqliteConnection = new SQLiteConnection(DB_STRING);
       sqliteConnection.Open();
       return sqliteConnection;
     }
 
-    public static DataTable BuscarCliente(string documento, string senha)
+    public static DataTable BuscarUsuario(string documento, string senha)
     {
       SQLiteDataAdapter da = null;
       DataTable dt = new DataTable();
@@ -50,7 +57,7 @@ namespace advanced
       {
         using (var cmd = DbConnection().CreateCommand())
         {
-          cmd.CommandText = "SELECT * FROM cliente Where cpf=" + documento + "senha=" + senha;
+          cmd.CommandText = "SELECT * FROM usuario Where cpf_cnpj=" + documento;
           da = new SQLiteDataAdapter(cmd.CommandText, DbConnection());
           da.Fill(dt);
           return dt;
@@ -58,7 +65,8 @@ namespace advanced
       }
       catch (Exception ex)
       {
-        throw ex;
+        Console.WriteLine(ex);
+        return null;
       }
     }
   }

@@ -1,6 +1,7 @@
 namespace advanced
 {
-    class PromProduto : Promocao{
-        
-    }
+  class PromProduto : Promocao
+  {
+
+  }
 }

@@ -14,8 +14,9 @@ namespace advanced
     private static int pontuacao = 0;
     private static string historico = "";
 
-    public static void Menu()
+    public static void Menu(Usuario usuario)
     {
+      Console.WriteLine();
       Console.WriteLine("---------- Cadastro de Cliente ----------");
       Console.WriteLine();
 
@@ -34,9 +35,7 @@ namespace advanced
       Console.WriteLine("Digite seu email:");
       email = Console.ReadLine();
 
-      Cliente cliente = new Cliente(pontuacao, historico, nome, documento, telefone, email);
-
-      Console.WriteLine(cliente.Imprimir());
+      usuario.CadastrarCliente(nome, telefone, documento, email);
     }
 
   }
