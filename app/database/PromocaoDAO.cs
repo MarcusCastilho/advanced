@@ -4,6 +4,7 @@ using System.Data.SQLite;
 
 namespace advanced
 {
+<<<<<<< HEAD
   static class PromocaoDAO
   {
     public static bool RegistrarPromocao(int usuario_id, DateTime validade, float desconto)
@@ -12,6 +13,13 @@ namespace advanced
       {
         // string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
         string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
+=======
+  static class PromocaoDAO {
+    public static bool RegistrarPromocao(int usuario_id, DateTime validade, float desconto) {
+      try {
+        string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
+        // string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
+>>>>>>> 2410836cb7c6ed22c6660915a2576041200bf49d
 
         SQLiteConnection conn = new SQLiteConnection(DB_STRING);
         conn.Open();
@@ -24,9 +32,13 @@ namespace advanced
         cmd.ExecuteNonQuery();
 
         return true;
+<<<<<<< HEAD
       }
       catch (DataException err)
       {
+=======
+      } catch (DataException err) {
+>>>>>>> 2410836cb7c6ed22c6660915a2576041200bf49d
         return false;
       }
     }

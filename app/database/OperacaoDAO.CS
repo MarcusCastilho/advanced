@@ -4,14 +4,22 @@ using System.Data.SQLite;
 
 namespace advanced
 {
+<<<<<<< HEAD
   public static class OperacaoDAO
+=======
+  public static class OperacaoDAO 
+>>>>>>> 2410836cb7c6ed22c6660915a2576041200bf49d
   {
     public static bool InserirVenda(int cliente_id, float valor)
     {
       string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
       // string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
+<<<<<<< HEAD
       try
       {
+=======
+      try {
+>>>>>>> 2410836cb7c6ed22c6660915a2576041200bf49d
         SQLiteConnection conn = new SQLiteConnection(DB_STRING);
         conn.Open();
 
@@ -22,9 +30,13 @@ namespace advanced
         cmd.ExecuteNonQuery();
 
         return true;
+<<<<<<< HEAD
       }
       catch (DataException err)
       {
+=======
+      } catch (DataException err) {
+>>>>>>> 2410836cb7c6ed22c6660915a2576041200bf49d
         return false;
       }
     }
@@ -33,8 +45,12 @@ namespace advanced
     {
       string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
       // string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
+<<<<<<< HEAD
       try
       {
+=======
+      try {
+>>>>>>> 2410836cb7c6ed22c6660915a2576041200bf49d
         SQLiteConnection conn = new SQLiteConnection(DB_STRING);
         conn.Open();
 
@@ -45,9 +61,13 @@ namespace advanced
         cmd.ExecuteNonQuery();
 
         return true;
+<<<<<<< HEAD
       }
       catch (DataException err)
       {
+=======
+      } catch (DataException err) {
+>>>>>>> 2410836cb7c6ed22c6660915a2576041200bf49d
         return false;
       }
     }

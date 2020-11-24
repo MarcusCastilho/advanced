@@ -9,7 +9,11 @@ namespace advanced
     public string descricao;
 
     // CONSTRUTORES
+<<<<<<< HEAD
     public Premio() { }
+=======
+    public Premio() {}
+>>>>>>> 2410836cb7c6ed22c6660915a2576041200bf49d
     public Premio(int identificador, string nome, int pontuacao, string descricao)
     {
       this.identificador = identificador;
