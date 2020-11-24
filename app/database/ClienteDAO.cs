@@ -47,6 +47,29 @@ namespace advanced
         return false;
       }
     }
+    public static DataTable BuscarCliente(string documento)
+    {
+      SQLiteDataAdapter da = null;
+      DataTable dt = new DataTable();
+
+      try
+      {
+        using (var cmd = DbConnection().CreateCommand())
+        {
+          Console.WriteLine(documento);
+          cmd.CommandText = "SELECT * FROM cliente Where cpf=" + documento;
+          da = new SQLiteDataAdapter(cmd.CommandText, DbConnection());
+          da.Fill(dt);
+
+          return dt;
+        }
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex);
+        return null;
+      }
+    }
 
     public static bool AtualizarPontucao(int cliente_id, int pontuacao)
     {

@@ -23,7 +23,12 @@ namespace advanced
         Console.Write("Digite o percentual de desconto da promoção (obrigatório) [x%]: ");
         float desconto = float.Parse(Console.ReadLine());
 
-        usuario.CriarPromocao(parsedDate, desconto);
+        bool promocao = usuario.CriarPromocao(parsedDate, desconto);
+        if (promocao)
+        {
+          Console.WriteLine("Promoção Cadastrada!");
+
+        }
 
       }
       else
@@ -38,7 +43,12 @@ namespace advanced
         Console.Write("Digite a descrição deste premio: ");
         string descricao = Console.ReadLine();
 
-        usuario.CadastrarPremio(nome, pontuacao, descricao);
+        bool premio = usuario.CadastrarPremio(nome, pontuacao, descricao);
+
+        if (premio)
+        {
+          Console.WriteLine("Premio Cadastrado!");
+        }
       }
 
 

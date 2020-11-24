@@ -35,7 +35,12 @@ namespace advanced
       Console.WriteLine("Digite seu email:");
       email = Console.ReadLine();
 
-      usuario.CadastrarCliente(nome, telefone, documento, email);
+      bool cadastrado = usuario.CadastrarCliente(nome, telefone, documento, email);
+      if (cadastrado)
+      {
+        Console.WriteLine("Cliente Cadastrado!");
+
+      }
     }
 
   }

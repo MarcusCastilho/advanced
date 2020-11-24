@@ -34,7 +34,6 @@ namespace advanced
           cmd.Parameters.AddWithValue("@descricao", descricao);
           cmd.ExecuteNonQuery();
         }
-        Console.Write("inserido");
         return true;
       }
       catch (Exception ex)

@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
+
 
 namespace advanced
 {
@@ -61,16 +63,21 @@ namespace advanced
 
 
     // MÉTODOS DE INSTÂNCIA
+
+    public static DataTable BuscarUsuario(string documento, string senha)
+    {
+      var resp = UsuarioDAO.BuscarUsuario(documento, senha);
+      return resp;
+    }
     public bool Vender(Cliente cliente, float valor)
     {
       var resp = cliente.Comprar(valor);
-      // Retornar se deu certo ou errado a operação de venda
       return resp;
     }
 
     public bool CadastrarCliente(string nome, string telefone, string documento, string email)
     {
-      var resp = Cliente.CadastrarCliente(this.id, nome, telefone, documento, email, 0);
+      Cliente resp = Cliente.CadastrarCliente(this.id, nome, telefone, documento, email, 0);
 
       if (resp != null)
       {
@@ -90,9 +97,10 @@ namespace advanced
       return resp;
     }
 
-    public void CriarPromocao(DateTime validade, float desconto)
+    public bool CriarPromocao(DateTime validade, float desconto)
     {
       var resp = Promocao.Registrar(this.id, validade, desconto);
+      return resp;
     }
 
     public bool ResgatarPremio(Cliente cliente, Premio premio)

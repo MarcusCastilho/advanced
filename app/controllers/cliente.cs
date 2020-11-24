@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
+
 
 namespace advanced
 {
@@ -18,8 +20,9 @@ namespace advanced
 
     // CONSTRUTOR
     public Cliente() { }
-    public Cliente(int pontuacao, string nome, string documento, string telefone, string email)
+    public Cliente(int usuario_id, int pontuacao, string nome, string documento, string telefone, string email)
     {
+      this.id = usuario_id;
       this.pontuacao = pontuacao;
       this.historico = new List<Operacao>(historico);
       this.nome = nome;
@@ -34,12 +37,19 @@ namespace advanced
     public static Cliente CadastrarCliente(int usuario_id, string nome, string email, string documento, string telefone, int pontuacao)
     {
       // remover 'pontuacao' e adicionar 'usuario_id' no DAO
-      Console.WriteLine(ClienteDAO.InserirCliente(usuario_id, nome, email, documento, telefone, pontuacao));
+      bool resp = ClienteDAO.InserirCliente(usuario_id, nome, email, documento, telefone, pontuacao);
       return new Cliente();
+    }
+
+    public static DataTable BuscarCliente(string documento)
+    {
+      var resp = ClienteDAO.BuscarCliente(documento);
+      return resp;
     }
 
     public bool Comprar(float valor)
     {
+      Console.WriteLine(this.id.ToString(), Now.ToString(), valor.ToString());
       var op = new Venda(this.id, Now, valor);
       var resp = op.RegistrarOperacao(this.id); // Vai inserir operação no banco
 
