@@ -11,13 +11,8 @@ namespace advanced
     {
       try
       {
-<<<<<<< HEAD
         // string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
         string DB_STRING = "Data Source=D:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
-=======
-        string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
-        // string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
->>>>>>> 2410836cb7c6ed22c6660915a2576041200bf49d
 
         SQLiteConnection conn = new SQLiteConnection(DB_STRING);
         conn.Open();
@@ -33,13 +28,9 @@ namespace advanced
 
         return true;
 
-<<<<<<< HEAD
       }
       catch (DataException err)
       {
-=======
-      } catch(DataException err) {
->>>>>>> 2410836cb7c6ed22c6660915a2576041200bf49d
         return false;
       }
 
@@ -49,13 +40,8 @@ namespace advanced
 
     private static SQLiteConnection DbConnection()
     {
-<<<<<<< HEAD
       // string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
       string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
-=======
-      string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
-      // string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
->>>>>>> 2410836cb7c6ed22c6660915a2576041200bf49d
 
       sqliteConnection = new SQLiteConnection(DB_STRING);
       sqliteConnection.Open();
@@ -80,10 +66,7 @@ namespace advanced
       }
       catch (Exception ex)
       {
-<<<<<<< HEAD
         Console.WriteLine(ex);
-=======
->>>>>>> 2410836cb7c6ed22c6660915a2576041200bf49d
         return null;
       }
     }
