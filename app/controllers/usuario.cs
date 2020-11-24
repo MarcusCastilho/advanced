@@ -69,6 +69,11 @@ namespace advanced
       var resp = UsuarioDAO.BuscarUsuario(documento, senha);
       return resp;
     }
+    public static DataTable BuscarPremio(int id)
+    {
+      var resp = Premio.BuscarPremio(id);
+      return resp;
+    }
     public bool Vender(Cliente cliente, float valor)
     {
       var resp = cliente.Comprar(valor);

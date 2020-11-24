@@ -44,6 +44,11 @@ namespace advanced
           RealizarVenda.Menu(usuario);
 
         }
+        else if (opcao == 4)
+        {
+          RealizarResgate.Menu(usuario);
+
+        }
         else if (opcao == 0)
         {
           Console.WriteLine("Obrigado!");

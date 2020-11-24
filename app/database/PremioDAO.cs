@@ -43,5 +43,27 @@ namespace advanced
       }
     }
 
+    public static DataTable BuscarPremio(int id)
+    {
+      SQLiteDataAdapter da = null;
+      DataTable dt = new DataTable();
+
+      try
+      {
+        using (var cmd = DbConnection().CreateCommand())
+        {
+          cmd.CommandText = "SELECT * FROM premios Where usuario_id=" + id;
+          da = new SQLiteDataAdapter(cmd.CommandText, DbConnection());
+          da.Fill(dt);
+
+          return dt;
+        }
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex);
+        return null;
+      }
+    }
   }
 }

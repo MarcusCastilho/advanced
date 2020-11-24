@@ -1,3 +1,6 @@
+using System;
+using System.Data;
+
 namespace advanced
 {
   public class Premio
@@ -22,6 +25,13 @@ namespace advanced
     public static bool CadastrarPremio(int usuario_id, string nome, int pontuacao, string descricao)
     {
       var resp = PremioDAO.InserirPremio(usuario_id, nome, pontuacao, descricao);
+
+      return resp;
+    }
+
+    public static DataTable BuscarPremio(int usuario_id)
+    {
+      var resp = PremioDAO.BuscarPremio(usuario_id);
 
       return resp;
     }
