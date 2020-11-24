@@ -24,7 +24,7 @@ namespace advanced
     {
       this.id = usuario_id;
       this.pontuacao = pontuacao;
-      this.historico = new List<Operacao>(historico);
+      // this.historico = new List<Operacao>(historico);
       this.nome = nome;
       this.email = email;
       this.documento = documento;
@@ -55,7 +55,7 @@ namespace advanced
 
       if (resp)
       {
-        this.historico.Add(op); // Adicionar operação no histórico
+        // this.historico.Add(op); // Adicionar operação no histórico
         this.pontuacao += (int)valor; // Adicionando valor da compra na pontuação 
         this.AtualizarPontuacao();
 

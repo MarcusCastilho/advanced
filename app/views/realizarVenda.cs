@@ -38,16 +38,10 @@ namespace advanced
           email = dados.Rows[i]["email"].ToString();
           pontuacao = Convert.ToInt32(dados.Rows[i]["pontuacao"]);
         }
-        Console.WriteLine(id);
-        Console.WriteLine(pontuacao);
-        Console.WriteLine(nome);
-        Console.WriteLine(documento);
-        Console.WriteLine(tel);
-        Console.WriteLine(email);
 
         Cliente cliente = new Cliente(id, pontuacao, nome, documento, tel, email);
 
-        Console.WriteLine("Qual o valor da compra do cliente: {0}", nome);
+        Console.WriteLine("Qual o valor da compra do cliente {0}:", nome);
         valor = float.Parse(Console.ReadLine());
 
         bool venda = usuario.Vender(cliente, valor);
