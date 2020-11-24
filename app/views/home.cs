@@ -21,6 +21,9 @@ namespace advanced
         Console.WriteLine("1 - Realizar Cadastro de Cliente");
         Console.WriteLine("2 - Cadastrar Promoção");
         Console.WriteLine("3 - Realizar Venda");
+        Console.WriteLine("4 - Realizar Resgate");
+        Console.WriteLine("5 - Visualizar Vendas");
+        Console.WriteLine("6 - Visualizar Promoções");
         Console.WriteLine("0 - Sair");
         Console.WriteLine();
 
