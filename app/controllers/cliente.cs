@@ -16,7 +16,7 @@ namespace advanced
     public string telefone { get; }
     public string documento { get; }
     public string email { get; }
-    public static DateTime Now { get; }
+    public static DateTime Now = DateTime.Now;
 
     // CONSTRUTOR
     public Cliente() { }
