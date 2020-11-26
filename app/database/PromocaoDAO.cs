@@ -10,8 +10,8 @@ namespace advanced
     {
       try
       {
-        // string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
-        string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
+        string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
+        // string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
 
         SQLiteConnection conn = new SQLiteConnection(DB_STRING);
         conn.Open();
@@ -31,8 +31,28 @@ namespace advanced
       }
     }
 
-    // public static bool ResgatarToken(string token) {
+    public static DataTable BuscarPromocoes(int id)
+    {
+      try
+      {
+        string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
+        // string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
 
-    // }
+        SQLiteConnection conn = new SQLiteConnection(DB_STRING);
+        conn.Open();
+
+        var query = "SELECT desconto, strftime('%d/%m/%Y', validade) as 'validade' FROM promocoes WHERE encerrada <> 1 and usuario_id=" + id;
+        SQLiteDataAdapter da = new SQLiteDataAdapter(query, conn);
+        DataTable dt = new DataTable();
+        da.Fill(dt);
+
+        return dt;
+      }
+      catch (DataException err)
+      {
+        return null;
+      }
+    }
+
   }
 }

@@ -14,12 +14,12 @@ namespace advanced
       Console.Write("Digite o tipo de promoção (obrigatório) [1- Desconto / 2- Premio]: ");
       string tipo = Console.ReadLine();
 
-      Console.Write("Digite a validade da promoção (obrigatório) [dd/mm/aaaa]: ");
-      string validade = Console.ReadLine();
-      var parsedDate = DateTime.Parse(validade);
-
       if (tipo == "1")
       {
+        Console.Write("Digite a validade da promoção (obrigatório) [dd/mm/aaaa]: ");
+        string validade = Console.ReadLine();
+        var parsedDate = DateTime.Parse(validade);
+
         Console.Write("Digite o percentual de desconto da promoção (obrigatório) [x%]: ");
         float desconto = float.Parse(Console.ReadLine());
 
@@ -50,9 +50,7 @@ namespace advanced
           Console.WriteLine("Premio Cadastrado!");
         }
       }
-
-
-
     }
+
   }
 }

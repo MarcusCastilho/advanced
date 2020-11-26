@@ -52,16 +52,26 @@ namespace advanced
         else
         {
           premios = Usuario.BuscarPremio(usuario.id);
-          for (int i = 0; i < dados.Rows.Count; i++)
+          for (int i = 0; i < premios.Rows.Count; i++)
           {
-            Console.Write("id:" + dados.Rows[i]["id"].ToString() + "Produto: " + dados.Rows[i]["nome_premio"].ToString() + "Pontuação Exigida: " + dados.Rows[i]["pontuacao"].ToString() + "Descrição: " + dados.Rows[i]["descricao"].ToString());
+            Console.WriteLine("id: " + premios.Rows[i]["premio_id"].ToString() + " | Produto: " + premios.Rows[i]["nome_premio"].ToString() + " | Pontuação Exigida: " + premios.Rows[i]["pontuacao"].ToString() + " | Descrição: " + premios.Rows[i]["descricao"].ToString());
+            Console.WriteLine();
           }
 
+          Console.Write("Digite o ID do premio a ser resgatado: ");
+          int id_premio = Convert.ToInt32(Console.ReadLine());
+
+          bool resp = usuario.ResgatarPremio(cliente, id_premio);
+
+          if(resp) {
+            Console.WriteLine("Resgate realizado com sucesso!");
+          } else {
+            Console.WriteLine("Falha ao realizar resgatar!");
+          }
+
+          Home.Menu(usuario);
 
         }
-
-
-
       }
       else
       {

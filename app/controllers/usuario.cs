@@ -63,17 +63,24 @@ namespace advanced
 
 
     // MÉTODOS DE INSTÂNCIA
-
     public static DataTable BuscarUsuario(string documento, string senha)
     {
       var resp = UsuarioDAO.BuscarUsuario(documento, senha);
       return resp;
     }
+
+    public static string BuscarPromocoes(int id)
+    {
+      var resp = Promocao.BuscarPromocoes(id);
+      return resp;
+    }
+
     public static DataTable BuscarPremio(int id)
     {
       var resp = Premio.BuscarPremio(id);
       return resp;
     }
+
     public bool Vender(Cliente cliente, float valor)
     {
       var resp = cliente.Comprar(valor);
@@ -108,9 +115,23 @@ namespace advanced
       return resp;
     }
 
-    public bool ResgatarPremio(Cliente cliente, Premio premio)
+    public bool ResgatarPremio(Cliente cliente, int id_premio)
     {
-      var resp = cliente.Resgatar(premio);
+      var premio = PremioDAO.BuscarPremioPorId(id_premio);
+
+      var nome = "";
+      var pontuacao = "";
+      var descricao = "";
+      for (int i = 0; i < premio.Rows.Count; i++)
+      {
+        nome = premio.Rows[i]["nome_premio"].ToString();
+        pontuacao = premio.Rows[i]["pontuacao"].ToString();
+        descricao = premio.Rows[i]["descricao"].ToString();
+      }
+
+      Premio p = new Premio(id_premio, nome, Convert.ToInt32(pontuacao), descricao);
+
+      var resp = cliente.Resgatar(p);
 
       return resp;
     }

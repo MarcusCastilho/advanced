@@ -18,7 +18,7 @@ namespace advanced
     // MÉTODOS
     public override bool RegistrarOperacao(int cliente_id)
     {
-      var resp = OperacaoDAO.RealizarResgate(cliente_id, this.premio.pontuacao);
+      var resp = OperacaoDAO.RealizarResgate(cliente_id, this.DataOperacao, this.premio.pontuacao);
 
       return resp;
     }

@@ -27,7 +27,7 @@ namespace advanced
         Usuario usuario = Usuario.CadastrarUsuario(nome, tel, cnpj, email, senha);
         Console.WriteLine("Cadastro Realizado!");
 
-
+        Login.Menu();
 
       }
 

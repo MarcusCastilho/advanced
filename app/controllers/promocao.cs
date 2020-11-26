@@ -29,5 +29,18 @@ namespace advanced
       return resp;
     }
 
+    public static string BuscarPromocoes(int usuario_id)
+    {
+      var promocoes = PromocaoDAO.BuscarPromocoes(usuario_id);
+      var resp = "";
+
+      for (int i = 0; i < promocoes.Rows.Count; i++)
+      {
+        resp += "Desconto Percentual: " + promocoes.Rows[i]["desconto"].ToString() + "% | Validade: " + promocoes.Rows[i]["validade"].ToString() + "\n\n";
+      }
+
+      return resp;
+    }
+
   }
 }

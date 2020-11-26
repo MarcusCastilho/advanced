@@ -8,8 +8,8 @@ namespace advanced
   {
     public static bool InserirVenda(int cliente_id, DateTime DataOperacao, float valor)
     {
-      // string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
-      string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
+      string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
+      // string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
       try
       {
         Console.WriteLine(cliente_id.ToString(), valor);
@@ -31,7 +31,7 @@ namespace advanced
       }
     }
 
-    public static bool RealizarResgate(int cliente_id, int pontos)
+    public static bool RealizarResgate(int cliente_id, DateTime DataOperacao, int pontos)
     {
       string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
       // string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
@@ -41,8 +41,9 @@ namespace advanced
         conn.Open();
 
         var cmd = conn.CreateCommand();
-        cmd.CommandText = "insert into resgates (cliente_id, pontos) values (@cliente_id, @pontos)";
+        cmd.CommandText = "insert into resgates (cliente_id, dat, pontos) values (@cliente_id, @DataOperacao, @pontos)";
         cmd.Parameters.AddWithValue("@cliente_id", cliente_id);
+        cmd.Parameters.AddWithValue("@DataOperacao", DataOperacao);
         cmd.Parameters.AddWithValue("@pontos", pontos);
         cmd.ExecuteNonQuery();
 

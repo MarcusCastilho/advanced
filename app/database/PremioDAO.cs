@@ -11,8 +11,8 @@ namespace advanced
 
     private static SQLiteConnection DbConnection()
     {
-      // string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
-      string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
+      string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
+      // string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
 
       sqliteConnection = new SQLiteConnection(DB_STRING);
       sqliteConnection.Open();
@@ -52,7 +52,7 @@ namespace advanced
       {
         using (var cmd = DbConnection().CreateCommand())
         {
-          cmd.CommandText = "SELECT * FROM premios Where usuario_id=" + id;
+          cmd.CommandText = "SELECT premio_id, nome_premio, pontuacao, descricao FROM premios Where usuario_id=" + id;
           da = new SQLiteDataAdapter(cmd.CommandText, DbConnection());
           da.Fill(dt);
 
@@ -65,5 +65,29 @@ namespace advanced
         return null;
       }
     }
+
+    public static DataTable BuscarPremioPorId(int id)
+    {
+      SQLiteDataAdapter da = null;
+      DataTable dt = new DataTable();
+
+      try
+      {
+        using (var cmd = DbConnection().CreateCommand())
+        {
+          cmd.CommandText = "SELECT nome_premio, pontuacao, descricao FROM premios WHERE premio_id=" + id;
+          da = new SQLiteDataAdapter(cmd.CommandText, DbConnection());
+          da.Fill(dt);
+
+          return dt;
+        }
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex);
+        return null;
+      }
+    }
+
   }
 }

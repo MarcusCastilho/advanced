@@ -11,8 +11,8 @@ namespace advanced
     {
       try
       {
-        // string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
-        string DB_STRING = "Data Source=D:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
+        string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
+        // string DB_STRING = "Data Source=D:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
 
         SQLiteConnection conn = new SQLiteConnection(DB_STRING);
         conn.Open();
@@ -40,8 +40,8 @@ namespace advanced
 
     private static SQLiteConnection DbConnection()
     {
-      // string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
-      string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
+      string DB_STRING = "Data Source=D:\\c#\\advanced\\app\\database\\pas.sdb";
+      // string DB_STRING = "Data Source=d:\\Cursos\\UCL\\periodo_4\\PROGRAMACAO_AVANCADA\\advanced\\app\\database\\pas.sdb; Version=3;";
 
       sqliteConnection = new SQLiteConnection(DB_STRING);
       sqliteConnection.Open();

@@ -6,7 +6,6 @@ namespace advanced
   public static class Home
   {
 
-
     public static void Menu(Usuario usuario)
     {
       Console.WriteLine();
@@ -22,7 +21,7 @@ namespace advanced
         Console.WriteLine("2 - Cadastrar Promoção");
         Console.WriteLine("3 - Realizar Venda");
         Console.WriteLine("4 - Realizar Resgate");
-        Console.WriteLine("5 - Visualizar Vendas");
+        Console.WriteLine("5 - Visualizar Premios");
         Console.WriteLine("6 - Visualizar Promoções");
         Console.WriteLine("0 - Sair");
         Console.WriteLine();
@@ -49,6 +48,21 @@ namespace advanced
           RealizarResgate.Menu(usuario);
 
         }
+        else if (opcao == 5)
+        {
+          var premios = Usuario.BuscarPremio(usuario.id);
+          for (int i = 0; i < premios.Rows.Count; i++)
+          {
+            Console.WriteLine("Produto: " + premios.Rows[i]["nome_premio"].ToString() + " | Pontuação Exigida: " + premios.Rows[i]["pontuacao"].ToString() + " | Descrição: " + premios.Rows[i]["descricao"].ToString());
+            Console.WriteLine();
+          }
+        }
+        else if (opcao == 6)
+        {
+          var resp = Usuario.BuscarPromocoes(usuario.id);
+
+          Console.WriteLine(resp);
+        }
         else if (opcao == 0)
         {
           Console.WriteLine("Obrigado!");
@@ -59,9 +73,7 @@ namespace advanced
           Console.WriteLine("Opção Inválida");
         }
       }
-
     }
-
 
   }
 }

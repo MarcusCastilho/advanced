@@ -24,12 +24,10 @@ namespace advanced
     {
       this.id = usuario_id;
       this.pontuacao = pontuacao;
-      // this.historico = new List<Operacao>(historico);
       this.nome = nome;
       this.email = email;
       this.documento = documento;
       this.telefone = telefone;
-
 
     }
 
@@ -55,7 +53,6 @@ namespace advanced
 
       if (resp)
       {
-        // this.historico.Add(op); // Adicionar operação no histórico
         this.pontuacao += (int)valor; // Adicionando valor da compra na pontuação 
         this.AtualizarPontuacao();
 
@@ -70,12 +67,12 @@ namespace advanced
 
     public bool Resgatar(Premio premio)
     {
+      Console.WriteLine(this.id.ToString(), Now.ToString(), premio.pontuacao.ToString());
       var op = new Resgate(this.id, Now, premio);
       var resp = op.RegistrarOperacao(this.id); // Vai inserir operação no banco
 
       if (resp)
       {
-        this.historico.Add(op); // Adicionar operação no histórico
         this.pontuacao -= (int)premio.pontuacao;
         this.AtualizarPontuacao();
 
